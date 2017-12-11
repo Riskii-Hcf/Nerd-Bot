@@ -416,4 +416,4 @@ break;
 
 
 
-bot.login(process.env.bot_token);
+bot.login(process.env.BOT_TOKEN);
