@@ -1,7 +1,7 @@
 {
-  "name": "nerd-bot",
-  "description": "By Telk",
-  "version": "1.0",
+  "name": "nerd",
+  "description": "A Discord bot coded in Discord.JS",
+  "version": "1.0.0",
   "main": "bot.js",
   "scripts": {
     "start": "node bot.js"
