@@ -10,7 +10,7 @@ const hexcols = [0xcc0000, 0xcc3300, 0xcc6600, 0xcc9900, 0xcccc00, 0x99cc00, 0x6
 
 bot.on('ready', () => {
   bot.user.setGame(`do /help ty`);
-    console.log(`[Start] ${new Date()}`);
+  console.log(`[Start] ${new Date()}`);
 });
 
 
