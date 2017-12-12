@@ -9,8 +9,8 @@ const PREFIX = "/"
 const hexcols = [0xcc0000, 0xcc3300, 0xcc6600, 0xcc9900, 0xcccc00, 0x99cc00, 0x66cc00, 0x33cc00, 0x00cc00, 0x00cc33, 0x00cc66, 0x00cc99, 0x00cccc, 0x0099cc, 0x0066cc, 0x0033cc, 0x0000cc, 0x3300cc, 0x6600cc, 0x9900cc, 0xcc00cc, 0xcc0099, 0xcc0066, 0xcc0033];
 
 bot.on("ready", function() {
-  bot.user.setGame(`do /help | ${bot.guilds.size} servers!`);
-    console.log(`Started bot as: ${bot.user.tag}!`);
+bot.user.setGame(`do /help | ${bot.guilds.size} servers!`);
+console.log(`Started bot as: ${bot.user.tag}!`);
 });
 
 
@@ -181,7 +181,7 @@ var specialc = new Discord.RichEmbed()
 .setTitle(`Special Commands!`)
 .setDescription(`This makes the bot cool`)
 .addField(`/cat`, `Sends a random picture of a cat`)
-.addField(`/repeat`, `The bot will copy the first word you said`)
+.addField(`/say`, `The bot will copy the sentence/word/phrase you said`)
 .addField(`/cheese`, `Sends a random cheese`)
 .addField(`/cc`, `Clears the last 100 words - If it is older than 4 days it wont work`)
 .setFooter(`All commands above are by Telk#6039`)
@@ -320,7 +320,7 @@ case "cc":
 message.channel.fetchMessages({limit: 100}).then(messages => message.channel.bulkDelete(messages));
 message.reply("Chat Has Been Cleared");
 break;
-case "repeat":
+case "say":
 var arg = message.content.substring(4).split(" ");
 const sayMessage = arg.join(" ");
   message.delete().catch(O_o=>{});
