@@ -8,9 +8,9 @@ const PREFIX = "/"
 
 const hexcols = [0xcc0000, 0xcc3300, 0xcc6600, 0xcc9900, 0xcccc00, 0x99cc00, 0x66cc00, 0x33cc00, 0x00cc00, 0x00cc33, 0x00cc66, 0x00cc99, 0x00cccc, 0x0099cc, 0x0066cc, 0x0033cc, 0x0000cc, 0x3300cc, 0x6600cc, 0x9900cc, 0xcc00cc, 0xcc0099, 0xcc0066, 0xcc0033];
 
-bot.on('ready', () => {
-  bot.user.setGame(`do /help ty`);
-  console.log(`[Start] ${new Date()}`);
+bot.on("ready", function() {
+  bot.user.setGame(`do /help | ${bot.guilds.size} servers!`);
+    console.log(`Started bot as: ${bot.user.tag}!`);
 });
 
 
@@ -321,7 +321,10 @@ message.channel.fetchMessages({limit: 100}).then(messages => message.channel.bul
 message.reply("Chat Has Been Cleared");
 break;
 case "repeat":
-message.channel.sendMessage(args[1])
+var arg = message.content.substring(4).split(" ");
+const sayMessage = arg.join(" ");
+  message.delete().catch(O_o=>{});
+  message.channel.send(sayMessage);
 break;
 case "embed":
 var embed = new Discord.RichEmbed()
