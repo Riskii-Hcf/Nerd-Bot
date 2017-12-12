@@ -215,12 +215,23 @@ var sie = new Discord.RichEmbed()
 .setColor(hexcols[~~(Math.random() * hexcols.length)]);
 message.channel.sendEmbed(sie)
 break;
+case "servers":
+var servers = new Discord.RichEmbed()
+.setTitle("B5Galaxy's Servers")
+.setDescription(`I am in ${bot.guilds.size} servers, with ${bot.users.size} users and server names:\n\n` + bot.guilds.map(g=>g.name).join(", ") + `\n\n**Please invite me to your server using this command: $$invite**`)
+.setColor(0x4286f4)
+.setFooter("Made by Telk#6039 and Telk#2726")
+message.channel.sendEmbed(servers);
+break;                    
 case "8ball":
+var ar = message.content.substring(6).split(" ");
+const smsg = ar.join(" ");
+
 if (args[1]) {
-  message.channel.sendMessage(':8ball: ' + message + '? - `' + eb[Math.floor(Math.random() * eb.length)] + '`');
-} else {
-  message.channel.sendMessage("Please provide a question");
-}
+    message.channel.sendMessage(':8ball: ' + smsg + '? - `' + eb[Math.floor(Math.random() * eb.length)] + '`');
+    } else {
+      message.channel.sendMessage("Please provide a question");
+    }
 break;
 case "stupid":
 message.delete("stupid")
@@ -412,6 +423,27 @@ var result = Math.floor((Math.random() * 2) + 1);
 message.reply('The coin landed on tails');
 }
 break;
+case "mc":
+var mc = new Discord.RichEmbed()
+.setTitle("Minecraft information")
+.setThumbnail('https://crafatar.com/renders/head/' + args[1] + '?helm&scale=10')
+.setDescription('information about ' + args[1])
+.addField('Username:', '' + args[1])
+.addField(`Skin:`, `https://minecraftskinstealer.com/skin.php?u=` + args[1] + '&s=700')
+.addField('NameMc:', 'https://namemc.com/name/' + args[1])
+.setFooter('By Telk#6039')
+message.channel.sendEmbed(mc)
+break;
+case "servers":
+var servers = new Discord.RichEmbed()
+.setTitle("B5Galaxy's Servers")
+.setDescription(`I am in ${bot.guilds.size} servers, with ${bot.users.size} users and server names:\n\n` + bot.guilds.map(g=>g.name).join(", ") + `\n\n**Please invite me to your server using this command: $$invite**`)
+.setColor(0x4286f4)
+.setFooter("Made by Telk#6039 and Telk#2726")
+message.channel.sendEmbed(servers);
+break;
+                    
+                    
 
 
 }
