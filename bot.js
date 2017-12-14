@@ -3,8 +3,6 @@ const Discord = require('discord.js');
 
 const bot = new Discord.Client();
 
-const music = require('telk-music');
-
 
 const PREFIX = "/"
 
@@ -454,12 +452,6 @@ break;
 }
 });
 
-music(bot, {
-	prefix: '/',
-	global: false,
-	maxQueueSize: 100,
-	clearInvoker: false
-});
 
 
 
