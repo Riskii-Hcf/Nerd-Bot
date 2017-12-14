@@ -458,7 +458,7 @@ music(bot, {
 	prefix: '/',
 	global: false,
 	maxQueueSize: 100,
-	clearInvoker: true
+	clearInvoker: false
 });
 
 
