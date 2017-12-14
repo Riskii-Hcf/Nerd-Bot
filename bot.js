@@ -3,12 +3,15 @@ const Discord = require('discord.js');
 
 const bot = new Discord.Client();
 
+const music = require('telk-music');
+
 
 const PREFIX = "/"
 
 const hexcols = [0xcc0000, 0xcc3300, 0xcc6600, 0xcc9900, 0xcccc00, 0x99cc00, 0x66cc00, 0x33cc00, 0x00cc00, 0x00cc33, 0x00cc66, 0x00cc99, 0x00cccc, 0x0099cc, 0x0066cc, 0x0033cc, 0x0000cc, 0x3300cc, 0x6600cc, 0x9900cc, 0xcc00cc, 0xcc0099, 0xcc0066, 0xcc0033];
 
 bot.on("ready", function() {
+bot.user.setGame(`do /help | ${bot.guilds.size} servers!`);                            
 console.log(`Started bot as: ${bot.user.tag}!`);
 });
 
@@ -31,6 +34,8 @@ if(!joinleaves) return;
 
 joinleaves.send(member.toString() + " has left... We will miss you! :cry:");
 console.log('A member left a server!')
+bot.user.setGame(`do /help | ${bot.guilds.size} servers!`);                    
+        
 });
 
 var eb = ["You can help youself right?",
@@ -447,6 +452,13 @@ break;
 
 
 }
+});
+
+music(bot, {
+	prefix: '/',
+	global: false,
+	maxQueueSize: 100,
+	clearInvoker: true
 });
 
 
