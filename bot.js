@@ -172,9 +172,9 @@ var musicc = new Discord.RichEmbed()
 .addField(`/search`, `Another alternatif for /play`)
 .addField(`/queue`, `Displays the current queue on the server`)
 .addField(`/skip`, `Skips the current song`)
-.addField(`pause`, `Pauses the queue`)
-.addField(`resume`, `Resumes the paused queue`)
-.addField(`leave`, `Makes the Bot leave the voice channel`)
+.addField(`/pause`, `Pauses the queue`)
+.addField(`/resume`, `Resumes the paused queue`)
+.addField(`/leave`, `Makes the Bot leave the voice channel`)
 .addField(`/clearqueue`, `clears the queue`)
 .addField(`/stop`, `clears the queue and leaves the voice channel`)
 .addField(`/volume`, `Sets the volume 1-200`)
@@ -231,7 +231,17 @@ var ar = message.content.substring(6).split(" ");
 const smsg = ar.join(" ");
 
 if (args[1]) {
-    message.channel.sendMessage(':8ball: ' + smsg + '? - `' + eb[Math.floor(Math.random() * eb.length)] + '`');
+var ballargs = message.content.substring(6).split(" ");
+const ballmsg = ballargs.join(" ");
+message.delete().catch(O_o=>{});
+var anwser = eb[Math.floor(Math.random() * eb.length)];
+var ball = new Discord.RichEmbed()
+.setTitle("LightBlue 8ball")
+.setDescription("Here is your answer:")
+.addField(":8ball: Question:", ballmsg, true)
+.addField(":8ball: Answer:", anwser)
+.setThumbnail("https://cdn.discordapp.com/avatars/384676114641190921/0e47d7efccbd42d621d5e27e2c261dea.png?size=2048");
+message.channel.sendEmbed(ball);
     } else {
       message.channel.sendMessage("Please provide a question");
     }
