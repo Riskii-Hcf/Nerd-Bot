@@ -236,7 +236,7 @@ const ballmsg = ballargs.join(" ");
 message.delete().catch(O_o=>{});
 var anwser = eb[Math.floor(Math.random() * eb.length)];
 var ball = new Discord.RichEmbed()
-.setTitle("LightBlue 8ball")
+.setTitle("Quality 8ball")
 .setDescription("Here is your answer:")
 .addField(":8ball: Question:", ballmsg, true)
 .addField(":8ball: Answer:", anwser)
